@@ -18,8 +18,7 @@ module state_machine(clk, reset, state_out);
 	   curr_state = ZERO;
 	end
 
-	always @ (posedge clk)
-	begin
+	always @ (posedge clk) begin
 		curr_state <= next_state;
 		//$display("current state: %b", curr_state);
 		//$display("output: %b", output_function(curr_state));

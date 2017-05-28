@@ -3,17 +3,18 @@ module test;
 	reg clk = 0;
 	wire [2:0] state_out;
 
-  	initial begin
+  initial begin
     	#100 $stop;
-  	end
+  end
 
-  	always begin
+  always begin
   		#5 clk = !clk;
  	end
 
 	state_machine fsm (clk, reset, state_out);
 
-	initial
+	initial begin
    		$monitor("Time: %t, state_out: %b, reset: %d",
-                 $time,     state_out,     reset);
+               $time,     state_out,     reset);
+  end
 endmodule
